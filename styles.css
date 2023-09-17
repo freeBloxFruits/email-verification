@@ -1,0 +1,35 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #232527; 
+}
+.container {
+    background-color: #393b3d; 
+    padding: 20px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+}
+input, button {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    border: 1px solid white; 
+    background-color: #393b3d; 
+    color: white; 
+    cursor: pointer;
+}
+button:hover {
+    background-color: #505050; 
+}
+h2 {
+    color: white; 
+}
